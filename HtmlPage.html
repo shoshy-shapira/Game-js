@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    
+    <script src="JavaScript.js"></script>
+    <link href="StyleSheet.css" rel="stylesheet" />
+</head>
+
+<body class="playPage" onload="start()" onunload="finish()">
+    <audio id="myAudio" src="pizuz.mp3"></audio>
+    <audio id="myAudio1" src="start.mp3"></audio>
+    <audio id="myAudio2" src="succes.mp3"></audio>
+        
+    <nav id="BoardMenu" class="menu" onmouseleave="closeNav()">
+        <div id="openBoardMenu" onmouseover="openNav()"></div>
+        <label onclick="startNewGame()">משחק חדש</label>
+        <a href="openPage.html">חזור לדף הבית</a>
+        <a href="instructions.html">הוראות</a>
+        <div>
+            <b>בחר רמה:</b>
+            <input type="radio" id="level1" name="rate" value="1" checked="checked" onchange="changeLevel()" /><label for="level1">מתחיל</label><br />
+            <input type="radio" id="level2" name="rate" value="2" onchange="changeLevel()" /><label for="level2">בינוני</label><br />
+            <input type="radio" id="level3" name="rate" value="3" onchange="changeLevel()" /><label for="level3">מתקדם</label>
+        </div>
+    </nav>
+
+    <div id="wrapper">
+        <div class="board" onclick="show()" ondblclick="dblclick()" oncontextmenu="rightClick()"></div>
+        <div class="wrapperDown">
+            <div>
+                <div></div>
+                <div id="timer" class="flags_and_timer"></div>
+            </div>
+            <div>
+                <div id="numFlags" class="flags_and_timer"></div>
+                <div></div>
+            </div>
+        </div>
+
+    </div>
+    <div class="win">
+        <img class="imogi" src="win.gif" >
+        <p > you win!!!</p>
+        <div class="btn1"  onclick="startNewGame()">משחק חדש</div>
+    </div>
+    <div class="lose">
+        <img class="imogi" src="lose.gif">
+        <p> you lose!</p>
+        <div class="btn1" onclick="startNewGame()">משחק חדש</div>
+        <div class="btn2" onclick="againGame()">נסה שוב</div>
+    </div>
+</body>
+</html>

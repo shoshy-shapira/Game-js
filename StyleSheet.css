@@ -1,0 +1,326 @@
+﻿*{
+    padding:0px;
+    margin:0px;
+
+}
+body {
+   
+    text-align: center;
+}
+.backgroundimg {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(instructiongame.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.backgroundimg a {
+    background-image: url(tree.jpg);
+    border:solid 0.5vh rgb(128,63,5)
+}
+
+.playPage {
+    background-color: black;
+}
+.head {
+    color: white;
+    font-size:7vh;
+    text-shadow: 0 0 18px rgb(51, 80, 199);
+    font-family: 'Segoe UI';
+}
+body > a {
+    text-decoration: none;
+    font-size: 3.8vh;
+    color: white;
+    border: 0.5vh solid rgb(0,0,1,0.5);
+    border-radius: 20px;
+    background-image: url(pbtn.png);
+    width: 21vh;
+    height: 5vh;
+    display: inline-block;
+    position: fixed;
+    bottom: 5vh;
+    transition: 0.4s;
+}
+body> a:nth-child(2n+1) {
+        left: 10vh;
+    }
+body> a:nth-child(2n) {
+        right: 10vh;
+    }
+
+body>a:hover {
+    transform: scale(1.2);
+}
+#audio {
+    display: none;
+}
+
+.imgopen {
+    background-image: url(pOpen.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    grid-column:2/15;
+    grid-row:2/10;
+    border:solid 3vh white;
+   
+}
+.wrapperOpen{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display:grid;
+    grid-template-columns:repeat(15,1fr);
+    width: 50vw;
+    height: 70vh;
+}
+#wrapper {
+    margin: auto;
+    padding: 7vh;
+    padding-bottom: 0px;
+    background-color: rgb(211, 214, 226);
+    height: 93vh;
+}
+.wrapper1,.wrapper2{
+    width:85vh;
+}
+.wrapper3 {
+    width: 159.375vh;
+}
+.wrapper1 .board {
+    grid-template-columns: repeat(9,1fr);
+}
+.wrapper2 .board {
+    grid-template-columns: repeat(16,1fr)
+}
+.wrapper3 .board{
+    grid-template-columns: repeat(30,1fr)
+}
+.board{
+    margin:auto;
+    display:grid;
+    grid-gap:0.3vh;
+    height:85vh;
+    background-color:black;
+    border:solid 0.4vh black;
+}
+.board div {
+    background-image: url('‏‏pall.JPG');
+    background-size: cover ;
+}
+    .board div:hover {
+        opacity:0.8;
+    }
+.board .bomb {
+    background-image: url('fire.gif');
+    background-image: url('pb.JPG');
+    animation-name: a1;
+    animation-duration: 0.8s;
+    
+}
+
+
+    .board .bomb2 {
+        background-image: url('pb.JPG');
+        animation-name: a2;
+        animation-duration: 1.5s;
+    }
+
+@keyframes a1 {
+    0% {
+    }
+
+    100% {
+        transform: rotate(360deg);
+
+    }
+}
+@keyframes a2 {
+    0% {}
+
+    50% {
+        transform: scale(1.15);
+
+    }
+    100%{
+
+    }
+}
+
+
+.wrapperDown{
+    width:80vh;
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    margin:auto;
+    margin-top:0.5vh;
+}
+.wrapper3 .wrapperDown{
+    width:140vh;
+}
+
+.wrapperDown > div {
+    display: flex;
+    flex-direction: row;
+    margin-left: 1vh;
+    margin-right: 1vh;
+}
+
+    .wrapperDown div:nth-child(1) div:nth-child(1), .wrapperDown div:nth-child(2) div:nth-child(2) {
+        background-image: url('pclock.jpg');
+        background-size: cover;
+        width: 6vh;
+        height: 6.2vh;
+        border-radius: 50%;
+        margin-left:2vh;
+        margin-right:2vh;
+    }
+    .wrapperDown div:nth-child(1) div:nth-child(1) {
+        background-image: url('pclock.jpg');
+    }
+    .wrapperDown div:nth-child(2) div:nth-child(2) {
+        background-image: url('pBomb.jpg');
+    }
+.flags_and_timer {
+    color: white;
+    font-size: 4vh;
+    width: 10vh;
+    height: 5vh;
+    background-color: rgb(52, 90, 161);
+    margin: auto;
+    border-radius: 10%;
+}
+
+
+
+nav {
+    border-left: 3.5px solid white;
+    border-right: 3.5px solid white;
+    outline: solid;
+    outline-color: black;
+    outline-width: 0px;
+    background-color: rgb(151, 168, 196);
+    position: fixed;
+    height: 45vh;
+    width: 25vh;
+    transition: 0.5s;
+    overflow-y: hidden;
+    right: 5vh;
+    top: -45vh;
+    z-index: 8;
+}
+
+
+div[id^=open] {
+    position: fixed;
+    right: 0vh;
+    height: 5vh;
+    width: 5vh;
+    transition: 0.5s;
+    background-size: cover;
+    z-index: 4;
+}
+
+#openBoardMenu {
+    background-image: url('pBomb.jpg');
+    right: 15vh;
+    top: 0vh;
+    outline-color: black;
+    outline: solid;
+    border-left: 3.5px solid white;
+    border-right: 3.5px solid white;
+    border-bottom: 3.5px solid white;
+    border-radius: 0px 0px 15px 15px
+}
+
+nav > a, nav label , nav b{
+    text-decoration: none;
+    font-size: 2.5vh;
+    font-family: Tahoma;
+    display:block;
+    color: black;
+    margin-block-end: 3vh;
+    margin-block-start: 3vh
+}
+
+nav a:hover,.menu label:hover {
+    color: white
+}
+.win,.lose {
+    display:none;
+    background-color: black;
+    opacity: 0.7;
+    width: 50vh;
+    height: 50vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.btn1, .btn2 {
+    font-size: 4vh;
+    width: 18vh;
+    height: 5vh;
+    color: white;
+    border: 0.5vh solid rgb(0,0,1,0.5);
+    border-radius: 20px;
+    display: inline-block;
+    transition: 0.2s;
+    margin:1.3vh;
+    margin-top:0vh;
+}
+.btn1 {
+    background-color: rgb(218,26,44);
+}
+.btn1:hover,.btn2:hover{
+    transform:scale(1.1);
+}
+
+.btn2 {
+    background-color: rgb(93,196,72);
+}
+
+.imogi{
+    margin:3.5vh;
+    width:18vh;
+    height:18vh;
+}
+.win p:nth-child(2), .lose p:nth-child(2) {
+    color: white;
+    font-size: 7vh;
+    margin-bottom:6vh;
+}
+.menu{
+    direction:rtl;
+}
+.menu div{
+    text-align:right;
+}
+    .menu div b {
+        margin-block-end: 1vh;
+        margin-block-start: 0vh;
+        margin-top:5vh;
+    }
+    .menu div label{
+        font-size:2vh;
+    }
+    .menu input {
+        width: 1.7vh;
+        height: 1.8vh;
+        margin:0px;
+        accent-color: black;
+    }
+.menu input ,.menu div b{
+    margin-right: 5vh;
+}
+
+    .menu div label {
+        display: inline-block;
+        margin-block-end: 1vh;
+        margin-block-start: 0vh;
+        margin-right:1vh;
+    }
+    
+
